@@ -1,33 +1,50 @@
 # roboto
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+A graphical 2D simulation for inverse kinematics (IK) numerical solutions, built with [libGDX](https://libgdx.com/).
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws a simple GUI on the screen.
+## Overview
 
-## Platforms
+`roboto` is a simulation and visualization environment for inverse kinematics solutions. 
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+## Features
 
-## Gradle
+- **2D Visualization**: Real-time rendering of robot arm movements and targets.
+- **Scene2D UI**: Built-in user interface components for interaction and parameter adjustment.
+- **Cross-Platform**: Built on libGDX, supporting multiple platforms (currently configured for desktop via LWJGL3).
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+### Running the Application
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+To run the simulation on your desktop, use the following Gradle command:
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+```bash
+./gradlew lwjgl3:run
+```
+
+## Development
+
+### Implementing a New Solver
+
+To create a custom IK solver, implement the `Solver` interface:
+
+```java
+public class MyCustomSolver implements Solver {
+    @Override
+    public Array<Angle> solve(final Tuple target) {
+        // Your IK numerical solution logic here
+        return new Array<Angle>();
+    }
+}
+```
+
+### Building a Runnable JAR
+
+To create a standalone executable JAR for the desktop version:
+
+```bash
+./gradlew lwjgl3:jar
+```
+The JAR will be located in `lwjgl3/build/libs`.
+
+## Acknowledgments
+
+- This project was generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
