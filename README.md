@@ -9,7 +9,7 @@ A graphical 2D simulation for inverse kinematics (IK) numerical solutions, built
 ## Features
 
 - **2D Visualization**: Real-time rendering of robot arm movements and targets.
-- **Scene2D UI**: Built-in user interface components for interaction and parameter adjustment.
+- **Interactive UI**: Adjust the number of joints and switch solvers on the fly with Scene2D UI.
 - **Cross-Platform**: Built on libGDX, supporting multiple platforms (currently configured for desktop via LWJGL3).
 
 ### Running the Application
@@ -20,6 +20,8 @@ To run the simulation on your desktop, use the following Gradle command:
 ./gradlew lwjgl3:run
 ```
 
+Click anywhere on the screen to set the target for the IK solvers.
+
 ## Development
 
 ### Implementing a New Solver
@@ -29,9 +31,13 @@ To create a custom IK solver, implement the `Solver` interface:
 ```java
 public class MyCustomSolver implements Solver {
     @Override
-    public Array<Angle> solve(final Tuple target) {
+    public void solve(final Tuple target, final Array<Segment> segments) {
         // Your IK numerical solution logic here
-        return new Array<Angle>();
+    }
+
+    @Override
+    public void setBase(float x, float y) {
+        // Set the base of the robot arm
     }
 }
 ```
