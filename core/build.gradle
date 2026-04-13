@@ -7,6 +7,7 @@ dependencies {
   api "com.github.tommyettinger:libgdx-texturepacker:$texturePackerOnlyVersion"
   api "com.github.tommyettinger:regexodus:$regExodusVersion"
   api "com.rafaskoberg.gdx:typing-label:$typingLabelVersion"
+  api "com.github.kotcrab.vis-ui:vis-ui:$visUiVersion"
   annotationProcessor "org.projectlombok:lombok:$lombokVersion"
   compileOnly "org.projectlombok:lombok:$lombokVersion"
 
