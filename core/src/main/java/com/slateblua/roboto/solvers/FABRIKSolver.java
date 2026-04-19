@@ -1,6 +1,7 @@
-package com.slateblua.roboto;
+package com.slateblua.roboto.solvers;
 
 import com.badlogic.gdx.utils.Array;
+import com.slateblua.roboto.Solver;
 import com.slateblua.roboto.data.Angle;
 import com.slateblua.roboto.data.Segment;
 import com.slateblua.roboto.data.Tuple;

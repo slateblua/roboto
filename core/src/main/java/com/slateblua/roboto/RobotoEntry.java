@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -18,6 +17,8 @@ import com.slateblua.roboto.data.Segment;
 import com.slateblua.roboto.data.Tuple;
 import com.kotcrab.vis.ui.widget.VisSelectBox;
 import com.slateblua.roboto.render.RobotHandRenderer;
+import com.slateblua.roboto.solvers.CCDSolver;
+import com.slateblua.roboto.solvers.FABRIKSolver;
 
 public class RobotoEntry extends ApplicationAdapter {
     private Stage stage;
